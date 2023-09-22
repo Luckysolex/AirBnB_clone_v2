@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module defines a class to manage file storage for hbnb clone"""
 import json
+import shlex
 from models.base_model import BaseModel
 from models.user import User
 from models.place import Place
@@ -64,4 +65,4 @@ class FileStorage:
         """Delete an existing element"""
         if obj:
             key = "{}.{}".format(type(obj).__name__, obj.id)
-            del self.__objects[ke]
+            del self.__objects[key]
